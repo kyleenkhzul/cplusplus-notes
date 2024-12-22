@@ -1,0 +1,13 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Operate on this!
+Level: 3, 2 (base program), 1 (overload operator [])
+
+Description: 
+
+The program defines a Point class representing a 2D point with x and y 
+coordinates and provides methods for various operations such as input, 
+output, distance calculation, flipping, and shifting. Additionally, it 
+overloads operators for input, output, distance calculation, equality, 
+inequality, and midpoint calculation. 

@@ -1,0 +1,13 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: When in Rome...
+Level: 6, 3 (base program), 3 (function writing)
+
+Description: 
+
+The user inputs an integer they want converted to Roman numerals. Due to the 
+limits of Roman numerals, the user can only input integers from (0, 4000]. The
+program will continue to reprompt if they want to continue the program with
+a simple yes or no.
+

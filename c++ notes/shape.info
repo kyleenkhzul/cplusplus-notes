@@ -1,0 +1,25 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: That's About the Shape of It.
+Level: 6, 4 (base program), 2 (counting shape menu option)
+
+Description: 
+
+This program allows user to create shapes using polymorphic hiearchy to 
+create objects that can be different types of shapes and specialization.
+It is broken down into something like this: 
+
+							  Shape
+                                |
+            --------------------------------------------------
+            |                   |                            |
+           1D                  2D                           3D
+            |                   |                            |
+        ----------         -------------            -------------------
+        |        |         |           |            |        |        |
+       Line    Curve     Circle    Rectangle      Sphere    Cube    Cone
+	   
+Where the user can specify the type of Shape they want to create and its 
+certain parameters depending on the type of shape. It then stores it into a
+dynamic array which is flexible and allows deletion. 

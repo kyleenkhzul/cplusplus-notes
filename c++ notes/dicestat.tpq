@@ -1,0 +1,43 @@
+TPQs
+1. If you fail to call the srand function, every run of your program with the 
+same kind of dice roll results in the same typical roll value. Why is this?
+
+	The rand function starts at certain spot between 0 and RAND_MAX and works 
+	there to always guarantee a sequence of values in those bounds. 
+	As a result, the same "random" number is printed. 
+
+2. Why do we nest the call to the time function inside the call to the srand 
+function? What is that funny argument to the time function (not its meaning, 
+but just what is it)?
+
+	We nest the call to the time function inside the call to the srand 
+	function because it returns some value of the time function. 
+
+3. Explain how the formula derived in the notes works to generate numbers in 
+a specified range.
+
+	The forumla of rand() % (b - a + 1) + a works to generate numbers in a 
+	specified range by taking in account of the fence-post analogy and thus 
+	producing numbers in the domain of [a,b]. 
+
+4. Bonus:Can you verify the simple formula I gave for the average value of
+ a dice roll?
+ 
+	The formula can be verified by plugging in the values tested of 3d12. 
+	It has a maximum of 36 and a minimum of 3. Using the formula, it would 
+	be (3+36)/2 which should be 19.5. 
+
+More TPQs
+
+1. How can that 'd'be extracted from between the numbers? (Notice there is no 
+spacing — at all— between the numbers and the d!)
+
+	'd' can be extracted from between the numbers through cin.ignore(). 
+
+2. Is it important that there be no space between the numbers and the d? What 
+happens if there are spaces on either/both sides of the d?
+
+	It is crucial that there be no space between the numbers and d. If there 
+	is space, the cin.ignore() function will possibly ignore a number. 
+	
+	

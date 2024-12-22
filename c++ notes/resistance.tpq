@@ -1,0 +1,23 @@
+1. One cin statement is needed to take the input of two resistances.
+
+2. It does not matter what the order of the two resistances are because of how the mathematical operations are being done.
+They are being added within parantheses and then evaluated as a whole to get the total resistance. The communicative
+property shows that in addition it does not matter the order of adding numbers. 
+
+3. I personally believe they shouldn't. If one really wanted to, they could code them into the same cout statement, but
+this would be really messy and hard to debug for other programmers. For the sake of keeping code clean and uniform,
+no, the cout statements for 'welcome' and 'enter' should be separate. 
+
+4. If the user types their numbers on separate lines, the cin statement will take the second input as the user hitting enter.
+This means that the second input variable will not have any data in it and it will proceed to the next line of code.
+
+5. In order to ensure that the sum in the denominator of the parallel circuit calculation is to use parantheses to group
+the whole denominator into one. 
+
+6i. Four variables would seem reasonable. Two would store user input and two would store total resistance of a series and 
+parallel circuit
+6ii. Two variables would be the bare minimum to store user input of resistances.
+6iii. More than five variables would be overkill because only four are needed to store and output necessary information such
+as input of resistance and output of resistance in a series and parallel circuit. 
+
+7. Mathematically, R1 and R2 can not equal 0 as it would result in a fraction dividing by 0 which is not possible. 

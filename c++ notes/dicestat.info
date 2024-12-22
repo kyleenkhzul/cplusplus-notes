@@ -1,0 +1,12 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: Roll 'em, Roll 'em, Roll 'em...
+Level: 3, 2 (base program) + 1 (dice notation user input)
+
+Description: 
+
+The user inputs the number of dice and sides of the dice in dice notation. The 
+program then calculates the minimum, average, and maximum values that could be 
+rolled. It then randomly generates a dice roll that could occur.
+

@@ -1,0 +1,80 @@
+1. Is there a simple repeating pattern here that might help you extract 
+commonality and save coding time?
+
+The simple repeating pattern for converting an integer to roman numerals is 
+extracting the single digit out of the thousands, hundreds, tens, or ones 
+place. By doing this, one can assign different roman numerals to the 
+respective values of 9, values greater than 5, and iterate in a for loop 
+for how many values below 5. 
+
+2. How does modulo fit into this scheme? (Hint: Look, for instance, at 2 and 
+7... or 1 and 6... or 3 and 8...)
+
+Modulo allows the programmer to extract a single digit out of the thousands, 
+hundreds, tens by simply modulus dividing by a thousand, hundred, or ten 
+respectively. 
+
+3. Why will your program only work for values in the (integral) range 
+[1..3999]? 
+
+Roman civilization's organization of numbers in their Roman numeral system do 
+not have a value representing negatives and 0. For values greater than 3999,
+Roman civilization instead used vinculum which is a sort of line over the ones
+representation of thousands. Our program doesn't have the ability to represent
+vinculum.
+
+4. For the conversion of each digit to Roman form (except maybe the thousands 
+digit), you should have four branches. How many are cascaded from one another?
+
+Thirteen branches are cascaded from one another.
+
+5. How many of these branches are nested aside from cascading?
+
+Seven branches are nested aside from cascading. 
+
+6. What is the purpose of each of the three loops in your program? 
+
+The purpose of each of the three loops in the program is to evaluate the digit
+at the thousandth, hundreth, tenth, or ones place. Depending on if the digit is
+a 9, greater than or equal to 5, greater than or equal to 4, and finally the 
+amount of ones. They all add Roman numerals accordingly to the digit in any one
+of these digit places. 
+
+7. How many tests would be required to completely test this program? 
+
+Three tests would be required to completely test this program. One should be 
+less than or equal to 0. One should be greater than or equal to 4000. Lastly,
+the final one should be a number within in the range (0, 3999].
+
+8. Why does Jason want us to convert numbers from a dead civilization, anyway? 
+
+Even though Roman civilization is dead, the Roman numeral system still 
+has a lot of practical uses in modern civilization. This includes 
+denotations of book chapter titles, the Super Bowl, time clocks, and 
+titles of the Winter and Summer Olympics. 
+
+9. How can your program allow the user to type both y and yes for their 
+again response? 
+
+The program only tests if the first char of the input is not a 'N'. The user can
+type in a word that is as long as they want but the program will only test the
+first char. If the user types either a 'y' or a 'yes', the program evaluates it
+all the same. 
+
+10. How can your program allow the user to type both y and Y for their again 
+response? 
+
+The program allows the user to type both 'y' and 'Y' for their response because
+the program forces any char to an uppercase through .toupper(). This means that 
+regardless of what they input, it will always evaluate the uppercase allowing
+both lowercase and uppercase input. 
+
+11. How can you have your program print different response text before 
+the Roman numeral result? 
+
+The program can print different response text before the Roman numeral result
+by using a while loop to check if the number is greater than 3999 or less than 
+1. If the number is greater than 3999, then it will cout statements that tell
+the user that the number is too large. It will then reprompt for another number.
+If the number is less than 1, then it will cout statements that tell the user
+that the number is too small. It will then reprompt for another number. 

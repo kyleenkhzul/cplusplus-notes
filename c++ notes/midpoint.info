@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: Point to Point
+Level: 2.5, 1.5 (base program), 1 (point notation)
+
+Description: 
+
+The user inputs two endpoints into the program. The program then takes the two 
+endpoints and calculates the midpoint between them. 
+

@@ -1,0 +1,12 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: The Times they are a' Changin'
+Level: 3.5, 3.5 (base program),
+
+Description: 
+
+The user inputs two times that are within the same day. It is input as military
+time. The program then tells the user the difference between the two times in
+various formats.
+

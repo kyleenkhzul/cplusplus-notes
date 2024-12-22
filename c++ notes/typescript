@@ -1,0 +1,287 @@
+Script started on 2024-05-10 10:15:53-05:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+ee43254@ares:~$ pwd
+/home/students/ee43254
+ee43254@ares:~$ cat datalist.info
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: How many items are in YOUR list?
+Level: 9, 3.5 (base program) + 1.5 (automatic shrink), 
+    + 1.5 (automatic growth) + 2.5 (overloaded operators)
+
+Description: 
+
+This lab allows the coder to show mastery of dynamic arrays, classes, 
+and libraries by creating a general 'template' or 'multipurpose' generic
+data classes for whatever the programmer may need. It is meant to be 
+dynamic, memory efficient, and work for the programmers needs.
+ee43254@ares:~$ show-code datalist.h
+
+
+datalist.h:
+
+
+     1	[36m#[39;49;00m[36mifndef DATALIST_H[39;49;00m[36m[39;49;00m
+     2	[36m#[39;49;00m[36mdefine DATALIST_H[39;49;00m[36m[39;49;00m
+     3	
+     4	[36m#[39;49;00m[36minclude[39;49;00m [37m<iostream>[39;49;00m[36m[39;49;00m
+     5	
+     6	[34mclass[39;49;00m [04m[32mGenericList[39;49;00m {
+     7	  [36mdouble[39;49;00m *list;       [37m// dynamic array of double data[39;49;00m
+     8	  [36mlong[39;49;00m physical_size; [37m// maximum size of the list[39;49;00m
+     9	  [36mlong[39;49;00m logical_size;  [37m// number of array positions filled[39;49;00m
+    10	
+    11	[34mpublic[39;49;00m:
+    12	  [37m// Constructor[39;49;00m
+    13	  GenericList([36mlong[39;49;00m max_size);
+    14	
+    15	  [37m// Destructor[39;49;00m
+    16	  ~GenericList();
+    17	
+    18	  [37m// Copy constructor[39;49;00m
+    19	  GenericList([34mconst[39;49;00m GenericList &other);
+    20	
+    21	  [37m// Assignment operator[39;49;00m
+    22	  GenericList &[34moperator[39;49;00m=([34mconst[39;49;00m GenericList &other);
+    23	
+    24	  [37m// Adds a value to the list[39;49;00m
+    25	  [36mvoid[39;49;00m [32madd_value[39;49;00m([36mdouble[39;49;00m value);
+    26		
+    27	  [37m// Checks if the list is full[39;49;00m
+    28	  [36mbool[39;49;00m [32mfull[39;49;00m() [34mconst[39;49;00m;
+    29	
+    30	  [37m// Returns the number of values in the list[39;49;00m
+    31	  [36mlong[39;49;00m [32mget_size[39;49;00m() [34mconst[39;49;00m;
+    32	
+    33	  [37m// Returns the value at the specified position[39;49;00m
+    34	  [36mdouble[39;49;00m [32mget_value[39;49;00m([36mlong[39;49;00m position) [34mconst[39;49;00m;
+    35	
+    36	  [37m// Returns a reference to the last value in the list[39;49;00m
+    37	  [36mdouble[39;49;00m [32mget_last[39;49;00m() [34mconst[39;49;00m;
+    38	
+    39	  [37m// Deletes the last value from the list[39;49;00m
+    40	  [36mvoid[39;49;00m [32mdelete_last[39;49;00m();
+    41	
+    42	  [37m// Outputs the values in the list[39;49;00m
+    43	  [36mvoid[39;49;00m [32moutput[39;49;00m(std::ostream &outs) [34mconst[39;49;00m;
+    44	
+    45	  [37m// Overload the [] operator for element access[39;49;00m
+    46	  [36mdouble[39;49;00m& [34moperator[39;49;00m[]([36mlong[39;49;00m index);
+    47	
+    48	  [37m// Overload the += operator for adding values to the list[39;49;00m
+    49	  GenericList& [34moperator[39;49;00m+=([36mdouble[39;49;00m value);
+    50	
+    51	  [37m// Declare the << operator as a friend function[39;49;00m
+    52	  [34mfriend[39;49;00m std::ostream& [34moperator[39;49;00m<<(std::ostream& os, [34mconst[39;49;00m GenericList& list);
+    53	};
+    54	
+    55	[36m#[39;49;00m[36mendif[39;49;00m[36m[39;49;00m
+ee43254@ares:~$ show-code datalist.cpp
+
+
+datalist.cpp:
+
+
+     1	[36m#[39;49;00m[36minclude[39;49;00m [37m"datalist.h"[39;49;00m[36m[39;49;00m
+     2	
+     3	[36m#[39;49;00m[36minclude[39;49;00m [37m<iostream>[39;49;00m[36m[39;49;00m
+     4	[36m#[39;49;00m[36minclude[39;49;00m [37m<cstdlib> [39;49;00m[36m[39;49;00m
+     5	
+     6	[34musing[39;49;00m [34mnamespace[39;49;00m std;
+     7	
+     8	[37m// Initializes the object to an empty list with specified size.[39;49;00m
+     9	GenericList::GenericList([36mlong[39;49;00m max_size) : 
+    10	 list([34mnew[39;49;00m [36mdouble[39;49;00m[max_size]), physical_size(max_size), logical_size([34m0[39;49;00m) {}
+    11	
+    12	[37m// Destructor to deallocate dynamic memory.[39;49;00m
+    13	GenericList::~GenericList()
+    14	{
+    15	    [34mdelete[39;49;00m[] list;
+    16	}
+    17	
+    18	[37m// Copy constructor.[39;49;00m
+    19	GenericList::GenericList([34mconst[39;49;00m GenericList &other) 
+    20	 : list([34mnew[39;49;00m [36mdouble[39;49;00m[other.physical_size]), physical_size(other.physical_size),
+    21	   logical_size(other.logical_size)
+    22	{
+    23	    [34mfor[39;49;00m ([36mlong[39;49;00m i = [34m0[39;49;00m; i < logical_size; ++i)
+    24	    {
+    25	        list[i] = other.list[i];
+    26	    }
+    27	}
+    28	
+    29	[37m// Assignment operator.[39;49;00m
+    30	GenericList &GenericList::[34moperator[39;49;00m=([34mconst[39;49;00m GenericList &other)
+    31	{
+    32	    [34mif[39;49;00m ([34mthis[39;49;00m != &other)
+    33	    {
+    34	        [34mdelete[39;49;00m[] list;
+    35	        physical_size = other.physical_size;
+    36	        logical_size = other.logical_size;
+    37	        list = [34mnew[39;49;00m [36mdouble[39;49;00m[physical_size];
+    38	        [34mfor[39;49;00m ([36mlong[39;49;00m i = [34m0[39;49;00m; i < logical_size; ++i)
+    39	        {
+    40	            list[i] = other.list[i];
+    41	        }
+    42	    }
+    43	    [34mreturn[39;49;00m *[34mthis[39;49;00m;
+    44	}
+    45	
+    46	[37m// Overload the [] operator for element access[39;49;00m
+    47	    [36mdouble[39;49;00m& GenericList::[34moperator[39;49;00m[]([36mlong[39;49;00m index) {
+    48	    [34mif[39;49;00m (index < [34m0[39;49;00m || index >= logical_size) {
+    49	        cerr << [33m"[39;49;00m[33mError: Index out of range[39;49;00m[33m"[39;49;00m << endl;
+    50	        exit([34m1[39;49;00m);
+    51	    }
+    52	    [34mreturn[39;49;00m list[index];
+    53	}
+    54	
+    55	[37m// Define the operator+= member function inside the class[39;49;00m
+    56	GenericList& GenericList::[34moperator[39;49;00m+=([36mdouble[39;49;00m value) {
+    57	    add_value(value);
+    58	    [34mreturn[39;49;00m *[34mthis[39;49;00m;
+    59	}
+    60	
+    61	[37m// Define the << operator as a friend function[39;49;00m
+    62	ostream& [34moperator[39;49;00m<<(ostream& os, [34mconst[39;49;00m GenericList& list) {
+    63	    [34mfor[39;49;00m ([36mlong[39;49;00m i = [34m0[39;49;00m; i < list.logical_size; ++i) {
+    64	        os << list.list[i] << [33m"[39;49;00m[33m [39;49;00m[33m"[39;49;00m;
+    65	    }
+    66	    [34mreturn[39;49;00m os;
+    67	    }
+    68	
+    69	[37m// Precondition:  The list is not full.[39;49;00m
+    70	[37m// Postcondition:  The value has been added to the END of the list,[39;49;00m
+    71	[37m//                 if there was room. If the list is full, it will be resized.[39;49;00m
+    72	[36mvoid[39;49;00m GenericList::add_value([36mdouble[39;49;00m value)
+    73	{
+    74	    [34mif[39;49;00m (full())
+    75	    {
+    76	        [37m// Resize the list[39;49;00m
+    77	        [36mlong[39;49;00m new_physical_size = (physical_size == [34m0[39;49;00m) ? [34m1[39;49;00m : physical_size * [34m2[39;49;00m;
+    78	        [36mdouble[39;49;00m *new_list = [34mnew[39;49;00m [36mdouble[39;49;00m[new_physical_size];
+    79	        [34mfor[39;49;00m ([36mlong[39;49;00m i = [34m0[39;49;00m; i < logical_size; ++i)
+    80	        {
+    81	            new_list[i] = list[i];
+    82	        }
+    83	        [34mdelete[39;49;00m[] list;
+    84	        list = new_list;
+    85	        physical_size = new_physical_size;
+    86	    }
+    87	    list[logical_size++] = value;
+    88	}
+    89	
+    90	[37m// Returns true if the list is full, false otherwise.[39;49;00m
+    91	[36mbool[39;49;00m GenericList::full() [34mconst[39;49;00m
+    92	{
+    93	    [34mreturn[39;49;00m (logical_size == physical_size);
+    94	}
+    95	
+    96	[37m// Returns the number of values in the list.[39;49;00m
+    97	[36mlong[39;49;00m GenericList::get_size() [34mconst[39;49;00m
+    98	{
+    99	    [34mreturn[39;49;00m logical_size;
+   100	}
+   101	
+   102	[37m// Precondition:  0 <= position < get_size()[39;49;00m
+   103	[37m// Returns the value at specified position.[39;49;00m
+   104	[36mdouble[39;49;00m GenericList::get_value([36mlong[39;49;00m position) [34mconst[39;49;00m
+   105	{
+   106	    [34mreturn[39;49;00m ((position >= logical_size) || (position < [34m0[39;49;00m)) ? ([34m0.0[39;49;00m) : 
+   107			(list[position]);
+   108	}
+   109	
+   110	[37m// Returns a copy of the last value in the list.[39;49;00m
+   111	[36mdouble[39;49;00m GenericList::get_last() [34mconst[39;49;00m
+   112	{
+   113	    [34mif[39;49;00m (logical_size == [34m0[39;49;00m)
+   114	        [34mreturn[39;49;00m [34m0.0[39;49;00m; [37m// or NaN, depending on your preference[39;49;00m
+   115	    [34mreturn[39;49;00m list[logical_size - [34m1[39;49;00m];
+   116	}
+   117	
+   118	[37m// Deletes the last value from the list.[39;49;00m
+   119	[37m// If the logical size becomes significantly smaller than the physical size,[39;49;00m
+   120	[37m// the list is resized to release the wasted elements.[39;49;00m
+   121	[36mvoid[39;49;00m GenericList::delete_last()
+   122	{
+   123	  [34mif[39;49;00m (logical_size > [34m0[39;49;00m)
+   124	    {
+   125	     --logical_size;
+   126	        
+   127	[37m// Check if the logical size is significantly smaller than the physical size[39;49;00m
+   128	     [34mif[39;49;00m (logical_size < physical_size / [34m2[39;49;00m)
+   129	     {
+   130	 [37m// Resize the list[39;49;00m
+   131	  [36mlong[39;49;00m new_physical_size = (physical_size == [34m0[39;49;00m) ? [34m0[39;49;00m : physical_size / [34m2[39;49;00m;
+   132	      [34mif[39;49;00m (new_physical_size == [34m0[39;49;00m) {
+   133	       [34mdelete[39;49;00m[] list;
+   134	        list = [34mnullptr[39;49;00m;
+   135	    } [34melse[39;49;00m {
+   136	      [36mdouble[39;49;00m *new_list = [34mnew[39;49;00m [36mdouble[39;49;00m[new_physical_size];
+   137	       [34mfor[39;49;00m ([36mlong[39;49;00m i = [34m0[39;49;00m; i < logical_size; ++i)
+   138	       {
+   139	        new_list[i] = list[i];
+   140	       }
+   141	      [34mdelete[39;49;00m[] list;
+   142	      list = new_list;
+   143	     }
+   144	     physical_size = new_physical_size;
+   145	    }
+   146	  }
+   147	}
+   148	
+   149	[37m// Precondition:  If outs is a file output stream, then outs has[39;49;00m
+   150	[37m//                already been connected to a file.[39;49;00m
+   151	[37m// Postcondition:  Values are output one per line on the stream.[39;49;00m
+   152	[36mvoid[39;49;00m GenericList::output(ostream &outs) [34mconst[39;49;00m
+   153	{
+   154	    [34mfor[39;49;00m ([36mlong[39;49;00m i = [34m0[39;49;00m; i < logical_size; ++i)
+   155	    {
+   156	        outs << list[i] << [33m'[39;49;00m[33m\n[39;49;00m[33m'[39;49;00m;
+   157	    }
+   158	}
+   159	
+   160	[36mint[39;49;00m main() {
+   161	  [34mconst[39;49;00m [36mlong[39;49;00m MAX_SIZE = [34m5[39;49;00m; [37m// Maximum size of the list[39;49;00m
+   162	    
+   163	  [37m// Create a list with maximum size MAX_SIZE[39;49;00m
+   164	  GenericList [32mlist[39;49;00m(MAX_SIZE);
+   165	  
+   166	  cout << [33m"[39;49;00m[33mCreating a list with a maximum size of: [39;49;00m[33m"[39;49;00m << MAX_SIZE << endl;
+   167	    
+   168	  [37m// Add some values to the list[39;49;00m
+   169	  list += [34m10.5[39;49;00m;  [37m// Using +=[39;49;00m
+   170	  list += [34m20.3[39;49;00m;
+   171	  list.add_value([34m15.7[39;49;00m); [37m// Using add_value[39;49;00m
+   172	  list.add_value([34m30.2[39;49;00m);
+   173	  list.add_value([34m25.9[39;49;00m);
+   174	    
+   175	  [37m// Output the values in the list using <<[39;49;00m
+   176	  cout << [33m"[39;49;00m[33mValues in the list: [39;49;00m[33m"[39;49;00m << list << endl;
+   177	    
+   178	  [37m// Test element access using [][39;49;00m
+   179	  cout << [33m"[39;49;00m[33mValue at index 2: [39;49;00m[33m"[39;49;00m << list[[34m2[39;49;00m] << endl;
+   180	    
+   181	  [37m// Test deleting the last value[39;49;00m
+   182	  list.delete_last();
+   183	  cout << [33m"[39;49;00m[33mAfter deleting the last value: [39;49;00m[33m"[39;49;00m << list << endl;
+   184	    
+   185	  [37m// Test full[39;49;00m
+   186	  cout << [33m"[39;49;00m[33mIs the list full? [39;49;00m[33m"[39;49;00m << (list.full() ? [33m"[39;49;00m[33mYes[39;49;00m[33m"[39;49;00m : [33m"[39;49;00m[33mNo[39;49;00m[33m"[39;49;00m) << endl;
+   187	
+   188	    [34mreturn[39;49;00m [34m0[39;49;00m;
+   189	}
+ee43254@ares:~$ CPP datalist
+datalist.cpp***
+
+
+ee43254@ares:~$ ./datalist.out
+Creating a list with a maximum size of: 5
+Values in the list: 10.5 20.3 15.7 30.2 25.9 
+Value at index 2: 15.7
+After deleting the last value: 10.5 20.3 15.7 30.2 
+Is the list full? No
+ee43254@ares:~$ exit
+exit
+
+Script done on 2024-05-10 10:16:15-05:00 [COMMAND_EXIT_CODE="0"]

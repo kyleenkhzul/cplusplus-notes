@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: So, why isn't the word palindrome one, anyway?
+Level: 4, 2.5 (base program), 1.5 (function writing)
+
+Description: 
+
+The user inputs an word they want to check whether or not it is a palindrome.
+The program takes the word input and checks if it is a palindrome returning
+true if it is, and false if it is not. 

@@ -1,0 +1,33 @@
+1. How do you get the menu to repeat until they choose the quit option?
+	In order to get the menu to repeat until they've chosen the quit option is
+	to use a helper bool variable. When they've chosen the quit option, the 
+	bool variable will be assigned to true which will make the while loop exit.
+
+2. How do you detect when they've entered something invalid?
+	We can detect if they've entered something invalid by testing for only 
+	values we want. If we only accept the values we want, any other case will
+	default to reprompting for a correct choice. 
+
+3. Can you easily check for both upper- and lower- case menu entries? 
+(What library function might help here?)
+	We can easily check for both upper and lower case menu entries by using
+	the toupper() function to test for only one case. 
+	
+4. How can you dispose of the excess of a word they may have typed at the choice 
+prompt? 
+	We can dispose of the excess of a word they may have typed by using: 
+	constexpr streamsize INF_FLAG{numeric_limits<streamsize>::max()};
+	cin.ignore(INF_FLAG, '\n');
+	
+5. How many tests would be needed to thoroughly (i.e. the menu, the 
+calculations, ...everything) test this application?
+	Four tests would be needed to thoroughly test this application. It would 
+	need to test each of the options using either the number or first char. 
+	The other one would be to check if the quit option properly exits the loop
+	and program. The last one would be any other input to see how the program
+	handles invalid input. 
+	
+6. Why is a switch preferred over a cascaded if for menu processing?
+	A switch is mort efficient than a set of nested ifs. The ifs must go through
+	each and every comparison to narrow down the exact execution of code needed
+	while switch expressions execute the necessary code directly. 

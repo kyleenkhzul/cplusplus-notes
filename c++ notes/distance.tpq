@@ -1,0 +1,56 @@
+TPQs
+1. What functions will you use from the math library? 
+
+	The functions I will use from the math library is the sqrt() and pow() 
+	functions. 
+
+2. How many arguments does each function you are calling accept? What do they 
+mean?
+
+	The pow() function accepts two parameters. The first parameter is the 
+	number to be raised to a n power. The second parameter is the n of the 
+	power. The sqrt() function accepts one parameter. It takes in the number 
+	to be square rooted.
+
+3. Do the arguments you pass to the function have to have certain names or 
+values? What about types?
+
+	The sqrt function works with any short, long, or double data types as 
+	long as the domain for that variable is not negative. If names are used,
+	they must be the correct data type and have some value stored in them.
+
+4. How many values are returned from each function you are calling? What do 
+you do with these values?
+	
+	The pow() and sqrt() function both returns some number. I take the power 
+	of the x values and y values subtracted and raise them to the second 
+	power. I then add these two with the use of parantheses to ensure proper 
+	order of operations and then square root the final sum. 
+
+More TPQs
+1. How many variables are needed to make the input format more natural for 
+the user? At minimum? At most?
+
+	At minimum, only one char variable is needed. At most, six char variables 
+	are needed. 
+
+2. How can the parentheses and comma be placed right next to the numbers 
+like that? How can cin determine where the number stops and the other stuff
+begins? Remember what happened when you typed a symbol or letter at a numeric 
+prompt before? Why doesn't that cause problems here?
+
+	By manipulating the cin line, one can force the input to take in a char
+	and skip straight to the number. Since digits and symbols are chars, 
+	cin input recognizes this and inputs the number. 
+
+3. What happens if the user doesn't type the parentheses or the comma? What
+ happens if they type some other symbols instead? Letters instead? Digits 
+ instead? (Try input like: $4^5%and see what happens. Try 44 12x— what 
+ happens? Experiment...)
+ 
+	The way I have set up, if the user doesn't type the parantheses or comma, 
+	the code breaks as it is searching for a char variable that is not there. 
+	Additionally, it will break if the user types in a digit. If the user 
+	types any other symbol or letter, the code will work as normal. 
+	
+	

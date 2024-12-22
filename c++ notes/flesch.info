@@ -1,0 +1,12 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Say WHAT?!
+Level: 7, 4 (base program), 3 (file input)
+
+Description: 
+
+This lab allows the user to calculate the Flesch Index of a text by allowing
+the user to input their own text file. The program prompts the user for a 
+filename and then calculates the Flesch Index. In the end, the program returns
+the Flesch Index.

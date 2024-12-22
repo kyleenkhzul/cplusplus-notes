@@ -1,0 +1,14 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Beware the Ides of March!
+Level: 6, 4 (base program), 2 (inlining + const)
+
+Description: 
+
+This lab requires the coding and design of a class and accompanying library
+to represent a single month of the year. The program is intended to take the
+input of a the number of the month, the first three letters of the month, or
+the full name of the month depending on user needs. The program can then
+calculate the months in advance, the months before, and whether two months
+in comparison are the same or not. 

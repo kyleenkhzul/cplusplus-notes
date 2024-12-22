@@ -1,0 +1,83 @@
+1.How many libraries did you create for your hierarchy? Do all of them have 
+both interface and implementation files?
+
+I have created 11 libraries for each kind of object. I used one implementation
+file as that is easier for me and Jason James to grade. I got away with not
+using implementation files for each library by including a default constructor
+in each library file as well as linking them all together with #include.
+
+2. How can you store information about so many different classes in a single 
+container?
+
+I could store pointers to objects of different classes in a single container 
+such as a vector of pointers. Since they are all derivedf from 'Shape', I can
+use polymorphism to store different derived class objects. 
+
+3. What does that new keyword virtual have to do with any of this?
+
+The new keyword virtual is used to declare a member function in the base class
+that can be overridden in derived classes. It is super helpful when derived
+classes have the same function but have more specific uses. It is pretty much
+the thing that allows polymorphism. 
+
+4. Will you ever need/want to create an object of type Shape, OneD, TwoD, or 
+ThreeD? How can you assure that this won't happen?
+No, they are abstract classes and are meant to be base classes for other classes
+such as Circle, Rectangle, Cube, and can not be instantiated. I can assure this
+by making their constructors protected. 
+
+5. What other methods/operators might prove useful in an application for 
+drawing shapes? What if the application were more of a computer-aided 
+instruction in geometry? Is there a need to limit your classes? 
+(Note: You don't have to implement these, I'm just looking for descriptive 
+responses.)
+
+In a drawing application, additional methods/operators that might prove useful 
+include:
+
+Transformations: Methods to translate, rotate, scale, or skew shapes.
+Color and Style: Methods to set colors, line thickness, fill patterns, etc.
+Selection and Editing: Methods to select and manipulate individual shapes.
+Grouping and Layering: Methods to group shapes together and manage layers.
+
+If the application were more focused on computer-aided instruction in geometry, 
+you might need additional classes to represent geometric concepts such as 
+points, lines, angles, polygons, etc. There may also be a need for classes 
+to perform geometric calculations and validations. The need to limit your 
+classes depends on the specific requirements of your application. 
+
+6. What kind of container should you use to store the Shapes: dynamic array, 
+static array, templated dynamic Arrayclass, vector, ...? Since this lab has 
+nothing to do with array management, what would be the most 
+appropriate/easiest choice? 
+
+The most appropriate and easiest choice for storing Shape objects would be a 
+std::vector. std::vector provides dynamic resizing, efficient element access, 
+and supports polymorphism through storing pointers to the base class. 
+Additionally, it manages memory automatically, reducing the risk of memory 
+leaks and simplifying memory management. Since this lab doesn't focus on 
+array management, using std::vector is a convenient and efficient option.
+
+MORE TPQS
+
+1. Which methodology is more general/portable?
+
+Both RTTI and dynamic_cast are general and portable methods for determining 
+the types of objects at runtime. However, dynamic_cast provides more control 
+and safety in downcasting, making it preferable in scenarios where downcasting 
+is required.
+
+2. Which embodies the motto: "Work smarter, not harder"?
+Both of them embody the motto, however they work just slightly different 
+depending on the need of the programmer. If one needs to downcast, dynamic_cast 
+is the way to go. If one needs a more general use without the need of third
+party or external libraries, RTTI is the way to go. 
+
+3. Other than to count them, what other reason might you have to verify a 
+type at run-time?
+
+There could be several reasons needed to verify a type at run time but one case
+is polymorphic behavior. When working with polymorphic class hierarchies, 
+you may need to verify the type of an object at runtime to determine its 
+behavior. Depending on the type, you may execute different methods or 
+algorithms. 

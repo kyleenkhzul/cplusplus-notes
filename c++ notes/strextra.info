@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: "Hi" == "hi"?
+Level: 1.5, 1.5 (base program), 
+
+Description: 
+
+This lab provides practice with string manipulation and libraries. We are to
+write a function that allows case-in sensitive comparisons of two strings and
+should be similar to the external library functions of strcasecmp or stricmp.

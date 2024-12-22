@@ -1,0 +1,11 @@
+1. How do you handle not knowing how much data is in the file?
+	Since we do not know how much data is in the file, we must getline() to 
+	read the contents of the file.
+2. What kind of loop do you use to process the file?
+	A while loop.
+3. What do you do if the person isn't found in the file?
+	If the person isn't found in the file, I have a boolean set up to where
+	it states that the user is not found.
+4. Can there be more than one name on a single file line? 
+	No, there can not be because each line is treated as its own string. If
+	there is more than one name then it will be treated as one. 

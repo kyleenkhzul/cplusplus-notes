@@ -1,0 +1,28 @@
+1. Does spacing between the numbers matter?
+No, the spacing between the numbers does not matter. The program reads 
+numbers from the file regardless of the spacing between them.
+
+2. Do they have to be in order (ascending/descending)?
+No, the numbers do not have to be in any particular order (ascending 
+or descending). The program processes the numbers as they appear in the file.
+
+3. Do they have to be integers? Floating point?
+The program is designed to handle both integers and floating-point numbers. 
+It reads numbers from the file and stores them as doubles, which can represent
+ both integers and floating-point numbers.
+
+4. Is it possible for your program to run out of space while reading the file?
+No, it's not possible for the program to run out of space while reading the 
+file. The program reads the file line by line and processes one number at a 
+time. It doesn't store all the numbers in memory at once, so memory usage is 
+minimal and won't cause issues even for large files.
+
+5. When finding the largest/smallest item in a list, what value should you 
+start with as your assumed smallest/largest value?
+When finding the largest item in a list, you should start with the smallest 
+possible value that the data type can represent, and when finding the 
+smallest item, you should start with the largest possible value that the 
+data type can represent. In the case of doubles, you can start with positive 
+and negative infinity as the initial values for max and min, respectively, 
+because any valid number will be greater than negative infinity and 
+less than positive infinity.

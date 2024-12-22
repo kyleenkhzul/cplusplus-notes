@@ -1,0 +1,13 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: How many items are in YOUR list?
+Level: 9, 3.5 (base program) + 1.5 (automatic shrink), 
+    + 1.5 (automatic growth) + 2.5 (overloaded operators)
+
+Description: 
+
+This lab allows the coder to show mastery of dynamic arrays, classes, 
+and libraries by creating a general 'template' or 'multipurpose' generic
+data classes for whatever the programmer may need. It is meant to be 
+dynamic, memory efficient, and work for the programmers needs.

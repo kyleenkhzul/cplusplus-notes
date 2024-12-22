@@ -1,0 +1,15 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: Hot Wax with That, Mister?
+Level: 5, 4 (base program), 1 (generate random wash code)
+
+Description: 
+
+This program simulates a carwash experience for the consumer. The consumer
+is prompted if they want a carwash and if so what kind of car wash. They get to
+choose from three different types, Super, Premium, or Ultra. Each type of car
+wash has a certain price which then the consumer is asked if the price is ok 
+with them. If not, they are reprompted if they want a car wash again and the
+program iterates through the questions until the consumer does not want a car
+wash or gets a car wash and accepts the fee. 

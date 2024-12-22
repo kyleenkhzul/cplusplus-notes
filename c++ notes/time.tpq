@@ -1,0 +1,74 @@
+1. How can you get the '0'to print in front of times with only one digit?
+
+	We can get '0' to print in front of the times with only one digit by 
+	testing whether or not the total minutes between the two times are greater 
+	than or equal to 60. If this is so, we can modulo out 60 and cout.fill 
+	with 0 and cout.width to 'two' to have a properly formatted single digit 
+	time. 
+
+2. How many functions did you write for this program? Describe each briefly — 
+explain what needs to come into each function, what it sends back out, and 
+its general purpose. 
+
+I wrote four functions. For the:
+	convertHourToMin: This function takes the amount of hours between two hour
+	values and converts the difference to minutes. It takes in the two hours
+	and returns back how many minutes are in the difference of the two hours.
+	
+	calculateTotalMin: This function calculates the total amount of minutes 
+	between two times. It utilizes the helper function, convertHourToMin. It
+	takes in the minutes and hours of both times and returns the amount of
+	minutes between the two times.
+	
+	calculateTotalHour: This function calculates the amount of hours between
+	two times. It utilizes the helper function, calculateTotalMin. It takes in
+	the minutes and hours of both times and returns the amount of hours between
+	the two times as a decimal.
+	
+	calculateMinBetweenTimes: This function calculates the total amount of 
+	minutes between two values of minutes. It takes in the two minutes and
+	returns the total minutes between the two values. It is helpful in 
+	determining whether to account if the time between minutes is more than one
+	hour. 
+
+3. How are reference arguments used in this program? 
+(On what function(s)? How many references on each function?) 
+
+	Reference arguments are used to manipulate the input of minutes and hours 
+	within the scope of the function in order to achieve a desired output.
+	I named my reference arguments the same as my global variables for the sake
+	of easier debugging and reading but it does the same effect. 
+	Each function has:
+		convertHourToMin: 2
+		calculateTotalMin: 4
+		calculateTotalHour: 4
+		calculateMinBetweenTimes: 2
+
+4. Describe the flow of information in this program. Where does the data start? 
+Where do variables exist? How is data passed from one function to another? 
+Where are references made? Where are copies of data made?
+	
+	The program starts off by declaring our global variables for the two short
+	values of hours and minutes. It also declares the char variable to account
+	for the colon in the user's input of time. These global variables exist 
+	throughout the whole program. It then cout statements and then prompts the 
+	user for both times. The program takes these two times and stores them 
+	accordingly into the two values of hours and two values of minutes 
+	respectively. From here, the rest of the program is various functions 
+	manipulating the user's input data of times to achieve the desired 
+	calculated outputs. The reference arguments in each of the function only
+	have a local scope within the function. Even though my reference arguments
+	are named the same as the global variables, they only exist within the
+	function. Data is passed from one function to another by return statements.
+	Each function returns a certain calculated data which can then be used by
+	other calling functions. Copies of data are made within a function and then
+	returned.
+
+5. How can you get the program to print a random message at the end of every 
+run?
+	The program can print a random message at the end of every run by generating
+	a random number at the start of the program. Depending on the value,
+	it can then print out a goodbye statement depending on which random value
+	was generated. This is limited by how many random print statements the 
+	programmer wants implemented and thus the random generation will be in the
+	bounds of how many statements there will be. 

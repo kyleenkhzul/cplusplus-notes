@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Smack in the Middle of Nowhere
+Level: 2.5, 1.5 (base program), 1 (repeating prompt)
+
+Description: 
+
+This lab provides practice with dynamic memory not mixed wth classes. Given
+a text file of numbers, we are to calculate the median in the most memory
+efficient manner. 

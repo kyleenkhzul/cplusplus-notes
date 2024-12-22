@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Hide 'n' Go Seek
+Level: 3.5, 1.5 (base program), 1.5 (loop to search again), 0.5 (suffixes)
+
+Description: 
+
+This program allows the user to search through a list of names stored in a 
+file for a particular one given a list. 
+

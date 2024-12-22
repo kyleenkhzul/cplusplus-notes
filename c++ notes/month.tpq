@@ -1,0 +1,75 @@
+1. Do you have any private methods? Do they help support the translation 
+between number and letter/word name representations which occur at several 
+places in this class' methods? Why would such functions be private? 
+Doesn't the user of the class need to call them?
+
+I have one private method that allows the program to convert a string to a 
+number which then corresponds to a month. They are private because it is only
+needed by the program to do the work and would be redundant if the user had to
+type in a function in order to calculate what month they want. It is meant to
+compartmentalize the process and streamline the user experience. 
+
+2. How can you have two methods called set_month? How can your class have 
+four constructors?! This is lunacy! (Hint: O__r_o_di_g.)
+
+There can be multiple methods and constructors all with the same name because
+of overloading with different parameters.
+
+3. Why didn't you need two versions of your method to advance to the next 
+month? (Hint: What data type is returned?)
+
+We did not need two versions of the advance method because the data type 
+returned is a short, not a string. 
+
+4. Does your input method prompt the user? Why shouldn't it?
+
+The input method does not prompt the user. It should not in order to promote
+reusability, reduce redundancy, and allow more flexible testing. If an input
+method constantly had prompted the user, it would need to change every time 
+the programmer needed it for something else. 
+
+5. Does your output method(s) print anything besides the month number or 
+name/abbrev. (as requested) (even an endl)? Why shouldn't it?
+
+It does not due to reasons mentioned in number four. Not having other printed
+stuff allows for greater flexibility and reusability. 
+
+6. How do you know what display method the programmer desires when your 
+output method is called (terrible pun/vocabulary clash, isn't it?)? 
+(Hint: Is a bool enough? Or do you need an enumeration?)
+
+In order to get past this, I just printed both the number of the month and the
+full month name to seamline user experience. 
+
+7. What about the input method? How can it detect what kind of form the user 
+is using and adapt to it?
+
+The input method can take a string and then static_cast it into whatever 
+data type is needed in order to produce the code needed to print. 
+
+8. Does your driver program do one test per run or does it allow multiple tests
+ of the class' features during a single run? Which seems more convenient for 
+ you/the end programmer?
+ 
+ Allowing multiple tests runs of a classes feature allows the end programmer to
+ fully test and realize the faults and successes of the program. Having to go 
+ back and forth to test simple features can be time-consuming and annoying. 
+
+9. Are the tests in your driver program hard-coded/literal or are they 
+adaptable to the needs of the programmer running the tests? Which would 
+be more useful?
+
+The tests in the driver are adapted to the needs of the programmer. Adaptability
+to the needs of the program is always going to be a more useful program than
+hard-coding. 
+
+10. Are the tests your driver can run specifically ordered in some way or 
+can the programmer doing the testing choose what s/he is going to test
+ first, next, ... last? Which would be more convenient/useful?
+ 
+ The tests in the driver are not specifically ordered but rather done in a 
+ random order to showcase all the features. The programmer can choose to test
+ any singular feature at any point. The latter is obviously more useful than
+ specifically ordering some way.
+
+ 

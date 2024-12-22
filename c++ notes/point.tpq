@@ -1,0 +1,74 @@
+1. Which operators are members and which are non-members? Do any have to 
+be members?
+
+Generally, unary operators are often implemented as member functions, 
+while binary operators may be implemented as either member functions or 
+non-member functions. Some operators, like assignment (=), subscript ([]), 
+and function call (()) must be member functions. However, many operators, 
+especially binary ones, can be implemented as non-member functions or as 
+friend functions.
+
+2. Which operators should be const? What other methods might well be made const? 
+In general, what is the rule which determines if a method should be made const?
+
+Member functions that do not modify the state of the object they are called on 
+should be marked as const. This includes functions like accessors, operators 
+that only retrieve data, and any other methods that don't modify the object's 
+internal state. The rule for determining if a method should be made const is 
+whether or not it modifies the object's state. If it does not modify the state, 
+it should be const.
+
+3. What type do equality and inequality return? Input? Output? Assignment?
+
+Equality and inequality operators (== and !=) typically return a bool type.
+Input, Output, and Assignment are all void. 
+
+4. Do you agree with your friend's decision to use operator/ for midpoint? 
+Why/Why not?
+
+Using the / operator for the midpoint calculation might not be the best 
+choice in terms of clarity and readability. While it's not inherently wrong, 
+it might lead to confusion or ambiguity about the purpose of the operator. 
+It's often better to choose operators that intuitively represent the operation 
+being performed, and using a separate method like midpoint() might be clearer.
+
+5. Why didn't you overload operators for less than, greater than, etc.?
+
+Overloading comparison operators like less than (<) and greater than (>) 
+can lead to ambiguities and unexpected behavior, especially in cases where
+there are multiple valid ways to compare objects. 
+
+6. Your friend wanted to overload operators for the flip and shift methods, 
+too (~ and += respectively). Why did you talk them out of it? Why wasn't 
+this a good idea?
+
+Overloading operators like ~ and += for flip and shift methods might not 
+be a good idea because these operators are not commonly associated with 
+those operations. Using operators in unconventional ways can lead to confusion
+ and make the code less readable and maintainable. It's better to stick to 
+ standard conventions and use descriptive method names for these operations.
+ 
+7. Just because you've added operators, should you necessarily remove the 
+old methods that did these jobs?
+
+Not necessarily. While operators can provide improve syntax and improve 
+readability in some cases, the old methods may still have their uses, 
+especially if they are well-named and clearly convey the intended operation. 
+It's generally a good idea to keep both the operators and the methods if they 
+serve distinct purposes or if there's a need to maintain compatibility with
+ existing code.
+
+MORE TPQS
+
+1. Should the programmer be able to do: p['X'] = 2.0; to change the 
+X-coordinate of a Point object p? 
+
+Allowing direct access to the x-coordinate using the subscript operator [] 
+might not be a good idea as it could lead to confusion and potential misuse. 
+
+2. If you were going to allow such behavior, how would you do it?
+
+Instead, you could provide separate member functions to set the x and y 
+coordinates, such as set_x() and set_y(). These functions would ensure
+ proper encapsulation and allow for better control over the modification 
+ of object state.

@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Round 'em Up!
+Level: 1.5, 1.5 (base program)
+
+Description: 
+
+This lab provides practice with file processing where we don't know the amount 
+of information in the file ahead of time. It calculates basic statistics for a
+set of numbers stored in a file. 

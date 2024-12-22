@@ -1,0 +1,42 @@
+1. What (data) types of values can your program handle?
+The program can handle any numeric data values present in the input file. 
+This includes integers, floating-point numbers, and scientific notation.
+
+2. How do you count the number of data items which are in the file? 
+Once you've counted them, how do you start over and read them in?
+The number of data items in the file is counted using the size() method of the 
+vector. After counting them, the program proceeds to read them in by 
+iterating over the file until the end is reached (while (file >> value)).
+
+3. How do you allocate memory on the heap? Is it guaranteed to work?
+Memory on the heap is allocated implicitly when the vector dynamically grows 
+to accommodate more data elements. The vector class manages memory allocation 
+and resizing internally, and it typically allocates more memory than necessary 
+to prevent frequent reallocations.
+
+4. When do you allocate memory for your values array? Before or after counting 
+the values in the file?
+Memory for the values array (the vector data in this case) is allocated 
+dynamically when the program reads data from the file. It grows dynamically
+as more elements are read from the file.
+
+5. When you are done with dynamic memory, what should you do?
+When you're done with dynamic memory, you should release it to prevent memory 
+leaks. In this code, memory management is handled automatically by the vector 
+class. If you were manually managing memory using pointers, you would use 
+delete[] to deallocate memory allocated with new[].
+
+6. What's this nullptr value for, anyway?
+It is used to represent a null pointer, which indicates that the pointer does 
+not point to any memory location. In this code, nullptr is not explicitly used
+because memory management is handled by vector
+7. Which sorting algorithm did you use? How efficient is it? 
+(i.e. What is it's complexity?)
+I used the bubble sort. It does its job well but it is not the most efficient.
+I tweaked it a little from the notes that Professor James provided.
+
+8. Does it matter if the data are sorted in ascending or descending order? 
+Why/Why not?
+It does not matter if it is sorted in order because median calculation depends
+on the middle value. The bubble sort would work equally as well if it was
+descending since I used ascending order.

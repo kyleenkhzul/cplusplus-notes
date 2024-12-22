@@ -1,0 +1,27 @@
+1. How can you access individual characters within a string?
+	You can access individual characters within a string with a for-loop that
+	iterates through every position of the string.
+
+2. How can you tell how long a string's content is?
+	You can tell how long a string's content is by NAME_OF_STRING.length();
+
+3. How can you tell that the characters at the beginning and end of a word 
+are the same?
+	Using the for-loop, you can iterate through each element of the string and
+	compare it to the last element of the string. As the iterator gets larger,
+	you approach the middle of the string. 
+
+4. What do you do with odd length words?
+	Eventually since every odd length word has a middle character, the for-loop
+	will compare the middle element to itself which will always be equal and 
+	return true if the entire word is a palindrome.
+
+5. How many characters do you have to look at to determine a word's 
+'palindromicness' if it contains 10characters? 11characters? ncharacters?
+	To determine whether a word is a palindrome or not, you only have to look 
+	at half of the word. So the algorithmic formula would be n/2.
+
+6. Does your program consider 34743 a palindrome? Why/Why not?
+	Yes, my program considers 34743 a palindrome because even though it might
+	be a short data type, it considers it a string and compares each casted
+	number as a string to which it compares and finds equal. 

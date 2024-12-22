@@ -1,0 +1,11 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: A TERRIBLY weighy subject!
+Level: 
+
+Description: 
+
+The user inputs how many ounces they want to convert to pounds. The program then calculates the amount of 
+pounds there are with remaining ounces. It will also give the exact decimal answer in pounds. It will also
+account for any bad user input and only extract the integer of ounces. 

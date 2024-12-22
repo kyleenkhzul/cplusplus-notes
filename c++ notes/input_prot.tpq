@@ -1,0 +1,50 @@
+1. How can you pass a prompt or error message to a function as an argument?
+	One can pass a prompt or an error message to a function by having the 
+	template function in the library take a parameter of a string reference.
+
+2. How do you pass a string to a function? Will the strings need to be changed 
+here? What care do you need to take for these arguments, then?
+	You can pass a string to a function by reference. If you want to change
+	the string you can simply change it in the function arguments. You need to 
+	make sure that the string is const and std:: and passed by reference. 
+	
+3. How do you pass a list of values to a function? Will the elements need to be 
+changed here? What care do you need to take for these arguments, then?
+	You can pass a list of values to a function by providing an initialized list
+	of chars. The elements will need to be changed there and you need to make
+	sure you use curly brackets because it is an initialized list. 
+
+4. What other arguments does each function take? Are they changed? 
+What special care should you take with them?
+	Since I overloaded my functions, any of the arguments can take any major 
+	data types of double, long, or char. One just needs to make sure that the
+	code they are working with is static_casted especially with char variables. 
+
+5. What value is returned by your functions? What type is it and 
+what does it represent?
+	The value returned by the functions are the typename variables and it 
+	represents any data that it needs to. It is sort of an umbrella term.
+
+6. What care does a caller of your functions have to take with this return value? 
+	The functions must validate the user input and if it is not valid data, 
+	then the functions must ask the user again until it has valid input. 
+
+7. How does the compiler distinguish which of your functions is being used for 
+a particular call? 
+	The compiler distinguishes which of the functions is being used by the 
+	different arguments it takes. Thus, a function can be overloaded but still
+	perform different tasks depending on data given. 
+	
+8. How do you protect your library from being circularly included?
+	By including guards such as #ifndef, #define, and #endif. 
+
+9. What changes are needed in your main application to get it to work with the 
+library? What about the compiling process?
+		To get the library to work in the main application one must do #include
+		the library file. 
+	
+10. How many files does your libraryconsist of? What are they? Which one(s) 
+do you #include?
+		My library consists of three files. They are ios, iostream, and string.
+		I #include'ed all of them. 
+	

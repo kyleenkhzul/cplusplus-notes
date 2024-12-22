@@ -1,0 +1,12 @@
+Name: Kyle Enkhzul
+Class: CSC122-W01
+ 
+Activity: Oops...shall we try again?
+Level: 3, 2 (base program), 1 (as few overloaded functions)
+
+Description: 
+
+This lab requires the coding of libraries in order to validate input and
+arrays. It also helps practice function overloading with the usage of templates.
+This library file allows general reusability and is meant to be an all purpose
+input file for validating user input when related to bounds or choices. 

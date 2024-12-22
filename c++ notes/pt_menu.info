@@ -1,0 +1,14 @@
+Name: Kyle Enkhzul
+Class: CSC121-001
+ 
+Activity: Pick'n'Choose
+Level: 6, 2 (base program), 1 (switch menu), 3 (functions)
+
+Description: 
+
+This program allows a user to calculate the distance and midpoint between two
+points using a menu system. They have three options to choose from. The first
+option calculates the distance between two points. The second option calculates
+the midpoint between two points. Finally, the third option quits the program.
+
+

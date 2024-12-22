@@ -1,0 +1,41 @@
+1. How do you compare two characters without reference to case? 
+How might you do this without destroying the character variable(s) contents?
+
+To compare two characters without regard to case, you can convert each 
+character to lowercase using std::tolower and then compare them. To 
+avoid modifying the original characters, cast them to unsigned char 
+before converting.
+
+2. How can you compare two strings in a case-insensitive way without destroying 
+their contents? (You should not change the strings in order to compare them!)
+
+You can compare two strings in a case-insensitive way by converting each 
+character to lowercase before comparing them. This can be done without 
+changing the original strings by using temporary variables for comparison.
+
+3. What kind of arguments should your string comparison function take? 
+(Value, reference, constant?)
+
+A string comparison function should take constant pointers to the 
+strings being compared to indicate that the function does not modify the 
+strings.
+
+4. How do you get that weird return value for your function? 
+Is it always -1, 0, 1? Or is there a reason it was defined as simply 
+less than 0, 0, or greater than 0?
+
+The return value of the string comparison function indicates whether 
+the first string is less than, equal to, or greater than the second 
+string. It is not necessarily limited to -1, 0, or 1; any negative 
+value typically indicates the first string is "less than" the second 
+string, while a positive value indicates the first string is "greater than" 
+the second string.
+
+5. How many times will you need to call your function to test it thoroughly? 
+How many times should you have to run the driver to do this testing?
+
+To test the function thoroughly, you would need to test it with different 
+combinations of strings to cover all possible cases, including equal strings, 
+strings with different lengths, and strings with different character cases. 
+You should run the driver at least three different times to showcase the
+three different outcomes that could happen. 
